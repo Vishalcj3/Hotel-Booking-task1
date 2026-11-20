@@ -59,7 +59,7 @@ function Testimonial() {
         {reviews.map((review, i) => (
           <div
             key={i}
-            className="w-full md:w-[45%] bg-gray-100 rounded-2xl p-8 shadow-sm shrink-0"
+            className="w-full md:w-[45%] bg-gray-200 rounded-2xl p-8 shadow-sm shrink-0"
           >
             {/* Stars + rating */}
             <div className="flex items-center gap-2 mb-5">
