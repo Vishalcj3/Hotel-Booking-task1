@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+.rdp-day {
+  width: 2.8rem !important;
+  height: 2.8rem !important;
+  font-size: 1rem !important;
+}
+
+.rdp-head_cell {
+  font-size: 1rem !important;
+  width: 2.8rem !important;
+}
+
+.rdp-caption_label {
+  font-size: 1.2rem !important;
+}
+
+.rdp-nav_button {
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+.range-slider {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  appearance: none;
+  background: transparent;
+  margin: 0;
+  height: 6px;
+  outline: none;
+}
+
+.range-slider::-webkit-slider-runnable-track{
+  height: 6px;
+  background: transparent;
+}
+.range-slider::-webkit-slider-thumb {
+  appearance: none;
+  pointer-events: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff200;
+  border: 2px solid white;
+  cursor: pointer;
+  box-shadow: 0 0 2px gray;
+}
+
+.range-slider::-moz-range-thumb {
+  pointer-events: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff200;
+  border: 2px solid white;
+  cursor: pointer;
+}
+html, body {
+  overflow-x: hidden;
+}
+
+/* put this on any horizontal-scroll section to hide its scrollbar (still scrolls) */
+.no-scrollbar {
+  -ms-overflow-style: none;   /* IE / old Edge */
+  scrollbar-width: none;      /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;              /* Chrome / Safari / Edge */
+}
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #1a1a1a;
+  color-scheme: light;
+}
