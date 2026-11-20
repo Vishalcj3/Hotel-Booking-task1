@@ -25,9 +25,9 @@ function FooterWeb() {
                   key={s.label}
                   href="#"
                   aria-label={s.label}
-                  className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center hover:scale-105 transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-transparent flex items-center justify-center hover:scale-105 transition-all duration-300"
                 >
-                  <img src={s.img} alt={s.label} className="w-5 h-5 object-contain" />
+                  <img src={s.img} alt={s.label} className="w-10 h-10 object-contain" />
                 </a>
               ))}
             </div>
