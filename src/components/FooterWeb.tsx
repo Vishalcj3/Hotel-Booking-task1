@@ -1,7 +1,10 @@
-import { Globe, Mail, Phone, Send } from "lucide-react";
-
 function FooterWeb() {
-  const socials = [Globe, Mail, Phone, Send];
+  const socials = [
+    { img: "/ig.png", label: "Instagram" },
+    { img: "/lkin.png", label: "LinkedIn" },
+    { img: "/tw.png", label: "Twitter" },
+    { img: "/fb.png", label: "Facebook" },
+  ];
 
   return (
     <footer className="bg-black text-white mt-24">
@@ -17,13 +20,14 @@ function FooterWeb() {
               stays across Indonesia with ease.
             </p>
             <div className="flex gap-3">
-              {socials.map((Icon, i) => (
+              {socials.map((s) => (
                 <a
-                  key={i}
+                  key={s.label}
                   href="#"
-                  className="w-10 h-10 rounded-full bg-yellow-400 text-white flex items-center justify-center hover:scale-105 transition-all duration-300"
+                  aria-label={s.label}
+                  className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center hover:scale-105 transition-all duration-300"
                 >
-                  <Icon size={18} />
+                  <img src={s.img} alt={s.label} className="w-5 h-5 object-contain" />
                 </a>
               ))}
             </div>
