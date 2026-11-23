@@ -1,21 +1,25 @@
 import PriceRange from "./PriceRange";
 import RangeDate from "./RangeDate";
-import { ArrowRight, Search , MapPin} from "lucide-react";
+import { ArrowRight, MapPin} from "lucide-react";
 function Hero(){
     return (
         <div>
             <div className="relative rw-full max-w-7xl rounded-2xl h-[550px] mx-auto shadow-xl">
                 <img src="/task1.jpg" alt="task1" className="absolute inset-0 w-full h-full object-cover"></img>
                 <div className="absolute inset-0 bg-black/20">
-                <p className="absolute top-4 left-4 px-11 py-20 text-white text-6xl font-bold" >Your <span style={{color:'yellow'}}>Ultimate</span> Hotel <br/> Booking Solution</p>
+                <p className="absolute top-4 left-4 px-11 py-20 text-white text-6xl font-bold" >Your <span style={{color:'yellow'}}>Ultimate</span> Hotel <br/> Booking Solution!</p>
                 </div>
                 <div className="px-13 py-22">
                     <button className="absolute translate-y-40 translate-x-2 px-5 py-2 shadow-md text-white bg-yellow-400 rounded-full justify-start flex items-center hover:scale-105 hover:shadow-xl transition-all duration-300" >Reserve now
                         <span className="ml-2 w-8 h-8 rounded-full bg-white text-yellow-400 flex items-center justify-center"><ArrowRight/></span>
                     </button>
+                </div> 
+                <div className="absolute right-5 top-1/2 -translate-y-1/2 text-center text-white">
+                    <p className="text-5xl font-bold">5M+</p>
+                    <p className="text-[23px] font-normal">Active Users</p>
                 </div>
                 <div className="absolute bottom-5 left-5 rounded-full bg-white shadow-lg flex items-center border border-gray-300 px-3 py-2.5">
-                <span><Search size={50} style={{color: '#ffaf04'}} className="w-5 h-6 "/></span>
+                <span><MapPin size={20} style={{color: '#ffaf04'}} className="w-5 h-6"/></span>
                 <input type="text" placeholder="Location" className="text-grey-800 outline-none px-3 translate-x-1"/>
                 <span className="-translate-x-5 "><RangeDate/></span>
                 </div>
@@ -42,7 +46,7 @@ function Hero(){
             </div>
             {/* Our Popular Hotels */}
             <p className="text-5xl font-bold text-center py-8">Our Popular <span style={{color: '#ffaf04'}}>Hotels</span></p>
-            <div className="flex flex-row flex-wrap justify-center gap-16 px-6 py-6">
+            <div className="flex flex-col lg:flex-row flex-wrap justify-center gap-16 px-6 py-6">
                 <div className="relative hover:scale-105 hover:shadow-xl transition-all duration-300">
                     <img src="/hotel1.jpg" className="w-85 h-105 rounded-2xl object-cover"/>
                     <div className="absolute left-0 bottom-0 w-full bg-white p-15 rounded-b-xl shadow-lg flex flex-col flex-row whitespace-nowrap">
@@ -109,7 +113,7 @@ function Hero(){
                 </div>                
             </div>
             {/* bottom search bar - centered pill, no more absolute/translate floating */}
-            <div className="w-full flex justify-center py-12">
+            <div className="w-full flex-col lg:flex-row justify-center py-12">
                 <div className="rounded-full bg-white shadow-lg flex items-center gap-23 whitespace-nowrap border border-gray-300 px-[60px] py-3">
                     <div className="flex items-center gap-5 ">
                         <MapPin size={30} color="#ffaf04" className="w-8 h-8"/>
