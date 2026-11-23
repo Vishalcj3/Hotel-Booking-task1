@@ -26,7 +26,7 @@ function Cards() {
   return (
     <div className="w-full max-w-7xl mx-auto px-6 py-16">
       {/* Heading */}
-      <h2 className="text-5xl font-bold text-center mb-14">
+      <h2 className="text-[40px] lg:text-5xl font-bold text-center mb-14">
         Our Latsest <span style={{ color: "#ffaf04" }}>Blog &amp; News</span>
       </h2>
 

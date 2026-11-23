@@ -91,7 +91,7 @@ function Hero() {
             <div className="max-w-7xl mx-auto px-6 py-12">
                 <p className="text-[30px] leading-tight md:text-4xl lg:text-5xl font-bold text-center mb-10">
                     <p><span style={{ color: '#ffaf04' }}>Top Destination Choice</span><br />
-                    <span className="text-black text-2xl md:text-3xl lg:text-4xl">For you in indonesian</span></p>
+                    <span className="text-black text-2xl md:text-3xl lg:text-[40px]">For you in indonesian</span></p>
                 </p>
                 {/* Mobile/tablet: simple grid. Desktop: bento grid */}
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 lg:hidden">
