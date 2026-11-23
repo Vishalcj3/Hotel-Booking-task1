@@ -31,7 +31,7 @@ function Cards() {
       </h2>
 
       {/* Cards */}
-      <div className="flex flex-col md:flex-row justify-center gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 md:px-6 justify-items-center">
         {blogs.map((blog) => (
           <div
             key={blog.title}

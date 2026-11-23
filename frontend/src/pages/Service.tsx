@@ -54,12 +54,12 @@ function Service(){
         }))
     }
     return(
-        <div className="justify-center w-130 mx-auto border-white py-3">
-            <div className="items-center mx-auto ">
-                <p className="text-5xl font-bold text-yellow-400 mb-2 italic">Let's Get You Started!</p>
-                <p className="text-[17px] font-light italic text-center mb-3">Tell us a little about yourself. <br/>Our Team will help you get started with the app</p>
-                <form onSubmit={handleSubmit}>
-                    <p className="font-medium text-lg mb-1 ">Enter Your Full Name :</p>
+        <div className="w-full max-w-lg mx-auto px-4 py-6">
+            <div className="flex flex-col">
+                <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-400 mb-1 self-center italic">Let's Get You Started!</p>
+                <p className="text-sm md:text-base font-light italic text-center mb-4">Tell us a little about yourself. <br/>Our Team will help you get started with the app</p>
+                <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+                    <p className="font-medium text-sm md:text-lg">Enter Your Full Name :</p>
                     <input 
                     id="fullname" 
                     name="fullname"
@@ -67,9 +67,9 @@ function Service(){
                     onChange={handleChange}
                     type="text" 
                     placeholder="Enter Your Full Name" 
-                    className="translate-x-3 border-2 border-yellow-400 bg-gray-100 mb-3 rounded-xl w-96 h-12 px-4 py-2">
+                    className="border-2 border-yellow-400 bg-gray-100 rounded-xl w-full h-9 md:h-12 px-3 py-1 text-sm md:text-base">
                     </input>
-                    <p className="text-lg font-semibold mb-1">Enter Your Number :</p>
+                    <p className="text-sm md:text-lg font-semibold">Enter Your Number :</p>
                     <input 
                     id="number" 
                     name="number"
@@ -77,9 +77,9 @@ function Service(){
                     onChange={handleChange}
                     type="number" 
                     placeholder="Enter Your Number" 
-                    className="translate-x-3 border-2 border-yellow-400 bg-gray-100 mb-3 rounded-xl w-96 h-12 px-4 py-2">
+                    className="border-2 border-yellow-400 bg-gray-100 rounded-xl w-full h-9 md:h-12 px-3 py-1 text-sm md:text-base">
                     </input>
-                    <p className="text-lg font-semibold mb-1">Enter Your Email :</p>
+                    <p className="text-sm md:text-lg font-semibold">Enter Your Email :</p>
                     <input 
                     id="email" 
                     name="email"
@@ -87,9 +87,9 @@ function Service(){
                     onChange={handleChange}
                     type="email" 
                     placeholder="Enter Your Email" 
-                    className="translate-x-3 border-2 border-yellow-400 bg-gray-100 mb-3 rounded-xl w-96 h-12 px-4 py-2">
+                    className="border-2 border-yellow-400 bg-gray-100 rounded-xl w-full h-9 md:h-12 px-3 py-1 text-sm md:text-base">
                     </input>
-                    <p className="font-semibold text-lg mb-1">Service :</p>
+                    <p className="font-semibold text-sm md:text-lg">Service :</p>
                     <input 
                     id="service"
                     name="service"
@@ -97,23 +97,22 @@ function Service(){
                     onChange={handleChange}
                     type="text" 
                     placeholder="Enter Your Service" 
-                    className="translate-x-3 border-2 border-yellow-400 bg-gray-100 mb-3 rounded-xl w-96 h-12 px-4 py-2">
+                    className="border-2 border-yellow-400 bg-gray-100 rounded-xl w-full h-9 md:h-12 px-3 py-1 text-sm md:text-base">
                     </input>
-                    <p className="font-semibold text-lg mb-1">Message :</p>
+                    <p className="font-semibold text-sm md:text-lg">Message :</p>
                     <textarea 
                     id="message"
                     name="message"
                     value={formdata.message}
                     onChange={handleChange}
-                    placeholder="Enter Your Message " 
-                    className="translate-x-3 border-2 border-yellow-400 bg-gray-100 mb-3 rounded-xl w-96 h-30 px-4 py-2"/>
-                    <br/>
+                    placeholder="Enter Your Message" 
+                    className="border-2 border-yellow-400 bg-gray-100 rounded-xl w-full h-24 md:h-32 px-3 py-2 text-sm md:text-base"/>
                     <button 
                     type="submit" 
-                    className="translate-x-37 flex bg-yellow-400 text-white rounded-full px-6 py-2 mt-4 shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300"
+                    className="self-center flex items-center gap-2 bg-yellow-400 text-white rounded-full px-4 py-1.5 text-sm shadow-md hover:scale-105 hover:shadow-xl transition-all duration-300"
                     >
                         Enquire
-                        <Send size={19} className="translate-x-2 translate-y-1"/>
+                        <Send size={11} />
                     </button>
                 </form>
             </div>

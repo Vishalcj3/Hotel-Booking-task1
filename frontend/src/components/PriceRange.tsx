@@ -7,6 +7,7 @@ function PriceRange() {
     const [min, setMin] = useState(0);
     const [max, setMax] = useState(5000);
     const [open, setOpen] = useState(false);
+    const [popupTop, setPopupTop] = useState(0);
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -17,6 +18,14 @@ function PriceRange() {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
+    const handleOpen = () => {
+        if (ref.current) {
+            const rect = ref.current.getBoundingClientRect();
+            setPopupTop(rect.bottom + window.scrollY + 8);
+        }
+        setOpen(!open);
+    };
+
     const handleMin = (val: number) => setMin(Math.min(val, max - 1));
     const handleMax = (val: number) => setMax(Math.max(val, min + 1));
 
@@ -24,17 +33,17 @@ function PriceRange() {
         <div className="relative " ref={ref}>
             {/* Trigger button */}
             <button
-                onClick={() => setOpen(!open)}
+                onClick={handleOpen}
                 className="flex items-center gap-2 rounded-full outline-none px-5 py-2.5 bg-white text-sm text-gray-700"
             >
                 <span><img src="/4.png" className="w-10 min-w-[42px] h-10"/></span>
-                <p className="flex flex-col text-lg -translate-y-4 translate-x-1 hover:scale-105 transition-all duration-300">Price Range</p>
-                <p className="flex flex-col text-xs translate-y-2 -translate-x-24 font-bold">${min} – ${max}</p>
+                <p className="flex flex-col text-md text-gray-500 -translate-y-4 translate-x-1 hover:scale-105 transition-all duration-300">Price Range</p>
+                <p className="flex flex-col text-xs translate-y-2 -translate-x-24 font-bold ml-5">${min} – ${max}</p>
             </button>
 
             {/* Popup */}
             {open && (
-                <div className="absolute bottom-full mb-3 left-0 z-50 bg-white rounded-2xl shadow-xl border border-gray-200 p-5 w-72">
+                <div className="absolute top-full mt-2 z-50 bg-white rounded-2xl shadow-xl border border-gray-200 p-3" style={{ width: 'min(240px, 92vw)', left: '50%', transform: 'translateX(-50%)' }}>
                     <h2 className="font-bold text-black text-base mb-4">Price Range</h2>
 
                     {/* Manual inputs */}
