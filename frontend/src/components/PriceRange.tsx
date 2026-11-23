@@ -7,7 +7,6 @@ function PriceRange() {
     const [min, setMin] = useState(0);
     const [max, setMax] = useState(5000);
     const [open, setOpen] = useState(false);
-    const [popupTop, setPopupTop] = useState(0);
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -18,13 +17,7 @@ function PriceRange() {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    const handleOpen = () => {
-        if (ref.current) {
-            const rect = ref.current.getBoundingClientRect();
-            setPopupTop(rect.bottom + window.scrollY + 8);
-        }
-        setOpen(!open);
-    };
+    const handleOpen = () => setOpen(!open);
 
     const handleMin = (val: number) => setMin(Math.min(val, max - 1));
     const handleMax = (val: number) => setMax(Math.max(val, min + 1));
