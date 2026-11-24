@@ -15,7 +15,7 @@ function Service(){
             return;
         }
         try{
-            const response = await fetch('http://localhost:5000/api/enquiries/enquiry',{
+            const response = await fetch('/api/enquiries/enquiry',{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'

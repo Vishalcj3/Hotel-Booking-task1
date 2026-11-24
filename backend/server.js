@@ -5,19 +5,27 @@ require("dotenv").config();
 
 const app = express();
 
+const allowedOrigins = [
+    process.env.FRONTEND_URL,
+    "http://localhost:5173"
+].filter(Boolean);
+
 app.use(cors({
-    origin: 'http://localhost:5173',
-    methods: ['POST', 'GET']
+    origin: allowedOrigins,
+    methods: ["POST", "GET"]
 }));
 app.use(express.json());
-app.use("/api/enquiries",
-    require("./routes/enquiryRoutes")
-);
+app.use("/api/enquiries", require("./routes/enquiryRoutes"));
+
 mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log("Connected to database");
-    app.listen(process.env.PORT || 5000, () => {
-        console.log(`Server is running on port ${process.env.PORT || 5000}`);
-    });
 }).catch((error) => {
     console.log(error);
 });
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+module.exports = app;
