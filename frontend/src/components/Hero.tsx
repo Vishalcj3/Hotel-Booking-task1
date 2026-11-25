@@ -6,7 +6,7 @@ function Hero() {
     return (
         <div>
             {/* Hero Image */}
-            <div className="relative w-full max-w-7xl rounded-lg h-[390px] md:h-[420px] lg:h-[550px] mx-auto shadow-xl overflow-visible">
+            <div className="relative w-full max-w-7xl rounded-lg h-[390px] md:h-[420px] lg:h-[550px] mx-auto shadow-xl ">
                 <img src="/task1.jpg" alt="task1" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/20" />
 

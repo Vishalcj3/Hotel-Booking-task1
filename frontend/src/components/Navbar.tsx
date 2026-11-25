@@ -17,10 +17,10 @@ function Navbar() {
 
                 {/* Desktop links */}
                 <div className="hidden md:flex items-center gap-2">
-                    <a href="#" className="text-black font-semibold hover:text-yellow-400 px-4 py-2">Home</a>
-                    <a href="#" className="text-black font-semibold hover:text-yellow-400 px-4 py-2">Service</a>
-                    <a href="#" className="text-black font-semibold hover:text-yellow-400 px-4 py-2">About Us</a>
-                    <a href="#" className="text-black font-semibold hover:text-yellow-400 px-4 py-2">Destination</a>
+                    <a href="#" className="text-black font-semibold hover:text-yellow-400 hover:underline hover:underline-offset-7 px-4 py-2">Home</a>
+                    <a href="#" className="text-black font-semibold hover:text-yellow-400 hover:underline hover:underline-offset-7 px-4 py-2">Service</a>
+                    <a href="#" className="text-black font-semibold hover:text-yellow-400 hover:underline hover:underline-offset-7 px-4 py-2">About Us</a>
+                    <a href="#" className="text-black font-semibold hover:text-yellow-400 hover:underline hover:underline-offset-7 px-4 py-2">Destination</a>
                 </div>
 
                 {/* Desktop button */}

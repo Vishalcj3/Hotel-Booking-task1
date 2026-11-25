@@ -15,17 +15,22 @@ app.use(cors({
     methods: ["POST", "GET"]
 }));
 app.use(express.json());
+
+let isConnected = false;
+app.use(async (req, res, next) => {
+    try {
+        if (!isConnected) {
+            await mongoose.connect(process.env.MONGODB_URI);
+            isConnected = true;
+            console.log("Connected to database");
+        }
+        next();
+    } catch (err) {
+        console.error("DB connection error:", err);
+        res.status(500).json({ message: "Database connection failed" });
+    }
+});
+
 app.use("/api/enquiries", require("./routes/enquiryRoutes"));
-
-mongoose.connect(process.env.MONGODB_URI).then(() => {
-    console.log("Connected to database");
-}).catch((error) => {
-    console.log(error);
-});
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
 
 module.exports = app;
