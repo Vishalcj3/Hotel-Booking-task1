@@ -42,7 +42,7 @@ function Service(){
                 alert(data.message || "Failed to submit enquiry!");
             }
         } catch(error){
-            alert("Server connection failed!")
+            alert("Error: " + (error instanceof Error ? error.message : String(error)));
             console.log(error)
         }
     };
